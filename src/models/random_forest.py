@@ -10,14 +10,11 @@ from src import model_analyser
 
 def random_forest_analysis(train_DF_label, train_DF_features):
     print("random forest classifier --")
+    model_name = "Random Forest Classifier"
 
     # setup
     X = train_DF_features
     y = train_DF_label.values.ravel()
-
-    # initialise the model. Pass to hyperparameter_tuning.
-
-    # uses the best splitter as the default for this one
     clf = RandomForestClassifier()
 
     # hyperparameter tuning
@@ -25,9 +22,9 @@ def random_forest_analysis(train_DF_label, train_DF_features):
 
     best_rf, grid_rf = hyperparameter_tuning.tune(clf, param_grid_rf, X, y)
 
-    # the tuning uses 5 fold cross validation, so this is used to test our results
+    # the tuning uses 5-fold cross validation, so this is used to test our results
     print("Best Random Forest parameters:", best_rf, "\n")
 
-    final_results = model_analyser.analysis(grid_rf, X, y)
+    final_results = model_analyser.analysis(grid_rf, X, y, model_name)
 
     return final_results, best_rf

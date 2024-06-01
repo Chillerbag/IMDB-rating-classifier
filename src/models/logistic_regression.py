@@ -4,6 +4,7 @@ from src import model_analyser
 
 def logistic_regression_analysis(train_DF_label, train_DF_features):
     print("logisitic regression classifier --")
+    model_name = "Logistic Regression Classifier"
 
     # setup
     X = train_DF_features
@@ -20,7 +21,6 @@ def logistic_regression_analysis(train_DF_label, train_DF_features):
     # the tuning uses 5-fold cross validation, so this is used to test our results
     print("Best Logistic regression parameters:", best_lr, "\n")
 
-    final_results = model_analyser.analysis(grid_lr, X, y)
-
+    final_results = model_analyser.analysis(grid_lr, X, y, model_name)
 
     return final_results, best_lr

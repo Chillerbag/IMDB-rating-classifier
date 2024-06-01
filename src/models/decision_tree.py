@@ -5,14 +5,12 @@ from src import model_analyser
 
 def decision_tree_analysis(train_DF_label, train_DF_features):
     print("Decision tree classifier --")
-
+    model_name = "Decision Tree Classifier"
     # setup
     X = train_DF_features
     y = train_DF_label.values.ravel()
 
     # initialise the model. Pass to hyperparameter_tuning.
-
-    # uses the best splitter as the default for this one
     clf = DecisionTreeClassifier()
 
     # hyperparameter tuning
@@ -23,5 +21,5 @@ def decision_tree_analysis(train_DF_label, train_DF_features):
     # the tuning uses 5-fold cross validation, so this is used to test our results
     print("Best Decision tree parameters:", best_dt, "\n")
 
-    final_results = model_analyser.analysis(grid_dt, X, y)
+    final_results = model_analyser.analysis(grid_dt, X, y, model_name)
     return final_results, best_dt

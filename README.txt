@@ -1,4 +1,16 @@
-------- COMP30027 A2 ETHAN HAWKINS ------
+
+This was a single labelling problem as part of my Machine Learning course in my third year of uni.
+The goal was to classify the rating of movies on IMDB by certain properties, using many different classifiers.
+
+The following was used:
+- Bagging and voting
+- Decision Trees
+- KNN
+- Logistic Regression
+- Random Forest
+- SVC
+- Stacking
+
 
 1) the following perquisite packages are required to run this solution:
 	cpi

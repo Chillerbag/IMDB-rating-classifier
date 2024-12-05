@@ -26,12 +26,16 @@ however, it universally reduced performance
 of models future studies should analyse
 binning techniques, as in theory this dataset is
 a good candidate for binning.
-</br></br>
+
+<p align="center">
+  <img src="imgs/fig_1.PNG" alt="Figure 1" width="400"/>
+</p>
+
 **Figure 1- histogram of the duration column,
 showing clear distributions Duration had a MI
 score of 0.07, whilst the binned duration had a MI
 score of 0.04.**
-</br></br>
+
 The "gross" column underwent the most
 significant transformation in the process of
 feature engineering. It was noticed that the
@@ -65,12 +69,17 @@ noticed that beyond z = 3, for example
 decision tree had a mean squared error (MSE)
 of 0.33 at z = 3, but at z = 8, this climbed to
 0.37
-</br></br>
-Figure 2- histogram of the num_voted_users, the
+
+
+<p align="center">
+<img src="imgs/fig_2.PNG" alt="Figure 2" width="400"/>
+</p>
+
+**Figure 2- histogram of the num_voted_users, the
 most significant column in relation to IMDB score
 according to MI, showing the presence of outliers
-particularly with x = 4.
-</br></br>
+particularly with x = 4.**
+
 ### 2.3 Imputation
 Imputation was initially done with KNN with
 K = 5. The KNN performance with 5-fold
@@ -83,12 +92,16 @@ indicating the unreliability of KNN, however,
 average is not adequate either, as the data
 distribution was impacted by scale and
 outliers.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_3.PNG" alt="Figure 3" width="400"/>
+</p>
+
 **Figure 3- scatterplot of the two most significant
 features. Clearly showing a relationship that isn’t
 very linear, and therefore making imputation by
 KNN a poor choice.**
-</br></br>
+
 ### 2.4 feature selection
 When using feature selection with mutual
 information, the average performance of all
@@ -108,11 +121,15 @@ StandardScaler, which can be heavily altered
 by outliers, was not appropriate in this dataset,
 which has many outliers evident in the z-score
 removal of outliers.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_4.PNG" alt="Figure 4" width="400"/>
+</p>
+
 **Figure 4- same distribution as figure 3, but scaled
 and outliers removed to improve the ability to
 discern a relationship.**
-</br></br>
+
 ### 2.6 Weighting
 Weighting was attempted using L1
 regularization penalty and logistic regression.
@@ -175,12 +192,16 @@ is likely that models which also utilise
 decision boundaries will be useful in a
 combination classifier to optimize accuracy
 from this weak dataset.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_5.PNG" alt="Figure 5" width="400"/>
+</p>
+
 **Figure 5- Confusion matrix for linear regression,
 indicating great success at predicting label = 2, but
 extreme lack of performance on 1, 3, and 0, which
 were often predicted as 2 due to class imbalance.**
-</br></br>
+
 ### 3.2 - Decision Tree
 Decision tree performed noticeably worse than
 logistic regression. This is suspected to be
@@ -193,11 +214,15 @@ accuracy was 0.68 on 5-fold CV. This theory
 was proven by the f1-score on the label 0
 being 0.00, indicating extremely poor
 performance on the minority class.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_6.PNG" alt="Figure 6" width="400"/>
+</p>
+
 **Figure 6- Confusion matrix for decision tree
 exhibiting a similar pattern to linear regression, but
 with higher variance.**
-</br></br>
+
 ### 3.3 - Random Forest
 Random Forest performed the same as
 Logistic regression with an accuracy of 0.73.
@@ -230,10 +255,14 @@ The lower performance of decision trees may
 imply there is still some complexity in the
 relationship that is misunderstood and may be
 investigated in further research.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_7.PNG" alt="Figure 7" width="400"/>
+</p>
+
 **Figure 7- Confusion matrix for support vector
 classifier.**
-</br></br>
+
 ### 3.5 - KNN
 KNN had a performance of 0.63 accuracy,
 which was higher than expected given its
@@ -242,12 +271,16 @@ performed with K = 5, and even though there
 was high class imbalance, it suggests that data
 can be linearly grouped, hence why other prior
 tested models performed better.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_8.PNG" alt="Figure 8" width="400"/>
+</p>
+
 **Figure 8 - Confusion matrix for KNN, reinforcing
 the observed pattern of class imbalance and so
 similar to other matrices that a linear relationship
 is possible**
-</br></br>
+
 ### 3.6 - Naïve Bayes
 Naïve Bayes had by far the worst
 performance, at 0.19 accuracy . This is due to
@@ -297,9 +330,13 @@ and may assist with research into picking a
 specific model and preprocessing pipeline,
 where this research focussed on general
 analysis at the cost of reduced accuracy.
-</br></br>
+
+<p align="center">
+<img src="imgs/fig_9.PNG" alt="Figure 9" width="400"/>
+</p>
+
 **Figure 9 – all 5-CV accuracies**
-</br></br>
+
 ## 5 - Conclusions
 Ultimately, with the small dataset the model
 chosen ended up being of marginal relevance.
